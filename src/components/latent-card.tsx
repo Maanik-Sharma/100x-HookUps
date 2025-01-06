@@ -76,10 +76,8 @@
 //removed popup
 "use client";
 import React, { useRef, useState } from "react";
-import { useRouter } from 'next/navigation';
 
 export default function LatentCard() {
-  const router = useRouter();
   const imageRef = useRef<HTMLDivElement>(null);
   const [showAttackMode, setShowAttackMode] = useState(false);
 

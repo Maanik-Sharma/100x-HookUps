@@ -176,6 +176,7 @@ const useMouseEnter = () => {
 };
 
 // 3D Container Component
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const ThreeDContainer = ({
   children,
   className,
@@ -223,6 +224,7 @@ const ThreeDContainer = ({
 };
 
 // 3D Item Component
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const ThreeDItem = ({
   children,
   className,

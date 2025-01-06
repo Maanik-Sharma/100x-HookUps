@@ -98,6 +98,7 @@ import { useEffect, useRef, useState } from 'react';
 
 export default function CameraSection() {
   const videoRef = useRef<HTMLVideoElement>(null);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [showMeme, setShowMeme] = useState(false); // Toggle for meme functionality
 
   useEffect(() => {

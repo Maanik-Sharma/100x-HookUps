@@ -150,10 +150,12 @@ import { motion } from "framer-motion";
 
 export const BackgroundLines = ({
   children,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   className,
   svgOptions,
 }: {
   children: React.ReactNode;
+  
   className?: string;
   svgOptions?: {
     duration?: number;
