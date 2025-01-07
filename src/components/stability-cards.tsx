@@ -67,32 +67,32 @@ export default function StabilityCards() {
   const cards = [
     {
       title: "Being financially stable",
-      image: "/assests/financially-stable.png",
+      image: "/assests/financially-stable.webp",
       link: "https://www.youtube.com/@financewithsharan"
     },
     {
       title: "Being mentally stable",
-      image: "assests/psych2gp.jpg",
+      image: "assests/mentally-stable.webp",
       link: "https://www.youtube.com/@Psych2go"
     },
     {
       title: "Being academically stable",
-      image: "assests/academically-stable.jpg",
+      image: "assests/academically-stable.webp",
       link: "https://www.youtube.com/@GateSmashers"
     },  
     {
       title: "Being physically stable",
-      image: "assests/physically-stable.png",
+      image: "assests/physically-stable.webp",
       link: "https://www.youtube.com/@FitTuber"
     },
     {
       title: "Being spiritually stable",
-      image: "assests/spiritually-stable.jpeg",
+      image: "assests/spiritually-stable.webp",
       link: "https://www.youtube.com/@BhajanMarg"
     },
     {
       title: "Being emotionally stable",
-      image: "/assests/shwerabh-gangwar.png",
+      image: "/assests/shwerabh-gangwar.webp",
       link: "https://www.youtube.com/@GangstaPerspectives"
     }
   ];

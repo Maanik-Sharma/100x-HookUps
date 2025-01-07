@@ -54,7 +54,7 @@ export default function AttackModeCard() {
           className="transition-transform duration-200 ease-out"
         >
           <img
-            src="/assests/Attack_mode.png"
+            src="/assests/Attack_mode.webp"
             alt="Attack Mode"
             className="w-full h-100 object-cover rounded-lg mb-6 shadow-lg hover:shadow-xl"
           />

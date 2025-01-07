@@ -327,7 +327,7 @@ export default function HeroSection({ onSearch }: { onSearch: () => void }) {
     <div className="relative">
       {/* Background Image */}
       <img 
-        src="/assests/hero-section-bg.jpg" 
+        src="/assests/hero-section-bg.webp" 
         alt="Background" 
         className="absolute inset-0 w-full h-full object-cover object-center"
       />

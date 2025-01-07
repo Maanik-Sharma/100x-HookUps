@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     url: "https://www.100xhookups.com",
     images: [
       {
-        url: "/images/100xhookups-banner.png",
+        url: "/assests/100xHookUpsPreview.webp",
         alt: "100xHookUps Banner",
       },
     ],
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     description: "Find your match and connect globally with 100xHookUps. Designed for developers and all, creating a world of connections.",
     images: [
       {
-        url: "/images/100xhookups-twitter-banner.png",
+        url: "/assests/100xHookUpsPreview.webp",
         alt: "100xHookUps Twitter Banner",
       },
     ],

@@ -56,7 +56,7 @@ const dummyContent = [
     ),
     badge: "1. Our Promise",
     image:
-      "/assests/landing-photo1.jpg",
+      "/assests/landing-photo1.webp",
   },
   {
     title: "Love, Backed by Science 'Where Data Meets Desire.'",
@@ -70,7 +70,7 @@ const dummyContent = [
     ),
     badge: "2. Love, Backed by Science",
     image:
-      "/assests/landing-photo2.jpeg",
+      "/assests/landing-photo2.webp",
   },
   {
     title: "Dating Done Right, According to Our Users.",
@@ -84,6 +84,6 @@ const dummyContent = [
     ),
     badge: "3. Real Stories, Real Success",
     image:
-      "/assests/landing-photo5.jpg",
+      "/assests/landing-photo3.webp",
   },    
 ];

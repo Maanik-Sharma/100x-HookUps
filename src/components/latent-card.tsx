@@ -110,7 +110,7 @@ export default function LatentCard() {
               className="transition-transform duration-200 ease-out"
             >
               <img
-                src="/assests/latent-photo.jpg"
+                src="/assests/latent-photo.webp"
                 alt="Attack Mode"
                 className="w-full h-100 object-cover rounded-lg mb-6 shadow-lg hover:shadow-xl"
               />
