@@ -206,6 +206,8 @@ import { useEffect, useRef, useState } from 'react';
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const [showMeme, setShowMeme] = useState(false); // Toggle for meme functionality
       const [showMessage, setShowMessage] = useState(false);
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const h = (setShowMeme);// handling uncalled setShowMeme
 
   useEffect(() => {
     if (!showMeme) {
