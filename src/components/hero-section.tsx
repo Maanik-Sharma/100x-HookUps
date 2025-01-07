@@ -313,72 +313,75 @@
 // }
 
 // // components/hero-section.tsx
-import React, { useState } from "react";
-import { BackgroundLines } from "@/components/ui/background-lines";
-import { Button } from './ui/button';
-import { Checkbox } from './ui/checkbox';
+//live code
+// import React, { useState } from "react";
+// import { BackgroundLines } from "@/components/ui/background-lines";
+// import { Button } from './ui/button';
+// import { Checkbox } from './ui/checkbox';
 
-export default function HeroSection({ onSearch }: { onSearch: () => void }) {
-  const [preference, setPreference] = useState('');
+// export default function HeroSection({ onSearch }: { onSearch: () => void }) {
+//   const [preference, setPreference] = useState('');
 
-  const options = ['Male', 'Female', 'Non-binary', 'Everyone'];
+//   const options = ['Male', 'Female', 'Non-binary', 'Everyone'];
 
-  return (
-    <div className="relative">
-      {/* Background Image */}
-      <img 
-        src="/assests/hero-section-bg.webp" 
-        alt="Background" 
-        className="absolute inset-0 w-full h-full object-cover object-center"
-      />
+//   return (
+//     <div className="relative">
+//       {/* Background Image */}
+//       <img 
+//         src="/assests/hero-section-bg.webp" 
+//         alt="Background" 
+//         className="absolute inset-0 w-full h-full object-cover object-center"
+//       />
 
-      <BackgroundLines>
-        <section className="min-h-screen flex items-center justify-center relative">
-          {/* Gradient Overlay - adjusted opacity to allow lines to show through */}
-          <div className="absolute inset-0 bg-gradient-to-br from-neutral-950/60 to-neutral-900/60" />
+//       <BackgroundLines>
+   
+      
+//         <section className="min-h-screen flex items-center justify-center relative">
+//           {/* Gradient Overlay - adjusted opacity to allow lines to show through */}
+//           <div className="absolute inset-0 bg-gradient-to-br from-neutral-950/60 to-neutral-900/60" />
 
-          <div className="relative z-10 text-center px-4">
-            <h1 className="text-8xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-neutral-50 to-neutral-200">
-              100xHookUps
-            </h1>
+//           <div className="relative z-10 text-center px-4">
+//             <h1 className="text-8xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-neutral-50 to-neutral-200">
+//               100xHookUps
+//             </h1>
 
-            <p className="text-xl mb-12 max-w-2xl mx-auto text-neutral-50">
-              Find your perfect match in the world of tech and innovation.
-            </p>
+//             <p className="text-xl mb-12 max-w-2xl mx-auto text-neutral-50">
+//               Find your perfect match in the world of tech and innovation.
+//             </p>
 
-            <p className="text-sm mb-4 max-w-2xl mx-auto text-neutral-50">
-              Looking for?
-            </p>
+//             <p className="text-sm mb-4 max-w-2xl mx-auto text-neutral-50">
+//               Looking for?
+//             </p>
 
-            <div className="space-y-6">
-              <div className="flex flex-wrap gap-4 justify-center">
-                {options.map((option) => (
-                  <label key={option} className="flex items-center space-x-2 text-neutral-50">
-                    <Checkbox 
-                      checked={preference === option}
-                      onCheckedChange={() => setPreference(option)}
-                      className="border-neutral-50 data-[state=checked]:bg-red-500"
-                    />
-                    <span>{option}</span>
-                  </label>
-                ))}
-              </div>
+//             <div className="space-y-6">
+//               <div className="flex flex-wrap gap-4 justify-center">
+//                 {options.map((option) => (
+//                   <label key={option} className="flex items-center space-x-2 text-neutral-50">
+//                     <Checkbox 
+//                       checked={preference === option}
+//                       onCheckedChange={() => setPreference(option)}
+//                       className="border-neutral-50 data-[state=checked]:bg-red-500"
+//                     />
+//                     <span>{option}</span>
+//                   </label>
+//                 ))}
+//               </div>
 
-              <Button
-                onClick={onSearch}
-                className="bg-gradient-to-r from-neutral-200 to-neutral-50 text-neutral-950 px-8 py-4 rounded-full text-lg hover:from-neutral-300 hover:to-neutral-100"
-                disabled={!preference}
-              >
-                Search Partners
-              </Button>
-            </div>
-          </div>
-        </section>
-      </BackgroundLines>
-    </div>
-  );
-}
-
+//               <Button
+//                 onClick={onSearch}
+//                 className="bg-gradient-to-r from-neutral-200 to-neutral-50 text-neutral-950 px-8 py-4 rounded-full text-lg hover:from-neutral-300 hover:to-neutral-100"
+//                 disabled={!preference}
+//               >
+//                 Search Partners
+//               </Button>
+//             </div>
+//           </div>
+//         </section>
+//         </BackgroundLines>
+//     </div>
+//   );
+// }
+//-----------------------------------------
 // HeroSection.tsx
 //pre cam access...
 // import React, { useState } from "react";
@@ -469,3 +472,73 @@ export default function HeroSection({ onSearch }: { onSearch: () => void }) {
 //     </div>
 //   );
 // }
+
+
+import React, { useState } from "react";
+import { BackgroundLines } from "@/components/ui/background-lines";
+import { Button } from './ui/button';
+import { Checkbox } from './ui/checkbox';
+
+export default function HeroSection({ onSearch }: { onSearch: () => void }) {
+  const [preference, setPreference] = useState('');
+  const options = ['Male', 'Female', 'Non-binary', 'Everyone'];
+
+  return (
+    <div className="relative w-full">
+      {/* [1] Background Image height adjustment */}
+      <img 
+        src="/assests/hero-section-bg.webp" 
+        alt="Background" 
+        className="absolute inset-0 w-full h-[50vh] md:h-full object-cover object-center"
+      />
+
+      <BackgroundLines>
+        {/* [2] Section height adjustment */}
+        <section className="min-h-[50vh] md:min-h-screen flex items-start md:items-center justify-center relative">
+          <div className="absolute inset-0 bg-gradient-to-br from-neutral-950/70 to-neutral-900/70" />
+
+          <div className="relative z-10 text-center w-full max-w-6xl mx-auto pt-20 md:pt-0">
+            <h1 className="text-4xl md:text-6xl lg:text-8xl font-bold mb-4 md:mb-8 bg-clip-text text-transparent bg-gradient-to-r from-neutral-50 to-neutral-200">
+              100xHookUps
+            </h1>
+
+            <p className="text-lg md:text-xl mb-6 md:mb-12 max-w-2xl mx-auto text-neutral-50 px-4">
+              Find your perfect match in the world of tech and innovation.
+            </p>
+
+            <p className="text-sm mb-4 max-w-2xl mx-auto text-neutral-50">
+              Looking for?
+            </p>
+
+            <div className="space-y-4 md:space-y-6 flex flex-col items-center">
+              <div className="grid grid-cols-2 md:flex md:flex-row gap-3 md:gap-4 justify-center px-4 md:px-0 w-full max-w-xs md:max-w-none">
+                {options.map((option) => (
+                  <label 
+                    key={option} 
+                    className="flex items-center justify-center space-x-2 text-neutral-50 bg-neutral-900/50 p-2 rounded-lg backdrop-blur-sm"
+                  >
+                    <Checkbox 
+                      checked={preference === option}
+                      onCheckedChange={() => setPreference(option)}
+                      className="border-neutral-50 data-[state=checked]:bg-red-500"
+                    />
+                    <span className="text-sm md:text-base">{option}</span>
+                  </label>
+                ))}
+              </div>
+
+              {/* [3] Button margin bottom adjustment */}
+              <Button
+                onClick={onSearch}
+                className="bg-gradient-to-r from-neutral-200 to-neutral-50 text-neutral-950 px-6 md:px-8 py-3 md:py-4 rounded-full text-base md:text-lg hover:from-neutral-300 hover:to-neutral-100 w-[200px] mx-auto mb-8 md:mb-0"
+                disabled={!preference}
+              >
+                Search Partners
+              </Button>
+            </div>
+          </div>
+        </section>
+      </BackgroundLines>
+    </div>
+  );
+}

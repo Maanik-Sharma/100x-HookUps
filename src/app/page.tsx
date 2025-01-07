@@ -19,7 +19,7 @@ export default function Home() {
       {!showCamera ? (
         <>
           <HeroSection onSearch={() => setShowCamera(true)} />
-          <section className="container mx-auto px-4 py-16">
+          <section className="container mx-auto px-7 pt-40 pb-28">
           <TracingBeamDemo/>
             <h2 className="text-3xl font-bold text-center mb-12 text-neutral-50 mt-10">
               Why Choose 100xHookUps?
