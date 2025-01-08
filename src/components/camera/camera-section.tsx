@@ -93,62 +93,63 @@
 //     </div>
 //   );
 // }
+//--------------------curr Live-------------------------------------------------------------
 // src/components/camera-section.tsx
-import { useEffect, useRef, useState } from 'react';
+// import { useEffect, useRef, useState } from 'react';
 
-export default function CameraSection() {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [showMeme, setShowMeme] = useState(false); // Toggle for meme functionality
+// export default function CameraSection() {
+//   const videoRef = useRef<HTMLVideoElement>(null);
+//   // eslint-disable-next-line @typescript-eslint/no-unused-vars
+//   const [showMeme, setShowMeme] = useState(false); // Toggle for meme functionality
 
-  useEffect(() => {
-    if (!showMeme) {
-      navigator.mediaDevices
-        .getUserMedia({ video: true })
-        .then((stream) => {
-          if (videoRef.current) {
-            videoRef.current.srcObject = stream;
-          }
-        })
-        .catch((err) => console.error(err));
-    }
+//   useEffect(() => {
+//     if (!showMeme) {
+//       navigator.mediaDevices
+//         .getUserMedia({ video: true })
+//         .then((stream) => {
+//           if (videoRef.current) {
+//             videoRef.current.srcObject = stream;
+//           }
+//         })
+//         .catch((err) => console.error(err));
+//     }
 
-    return () => {
-      if (videoRef.current?.srcObject) {
-        const tracks = (videoRef.current.srcObject as MediaStream).getTracks();
-        tracks.forEach((track) => track.stop());
-      }
-    };
-  }, [showMeme]);
+//     return () => {
+//       if (videoRef.current?.srcObject) {
+//         const tracks = (videoRef.current.srcObject as MediaStream).getTracks();
+//         tracks.forEach((track) => track.stop());
+//       }
+//     };
+//   }, [showMeme]);
 
-  return (
-    <div className="relative min-h-[50vh] flex items-center justify-center bg-black">
-      {!showMeme ? (
-        <video
-          ref={videoRef}
-          autoPlay
-          playsInline
-          className="w-150 h-full object-cover"
-        />
-      ) : (
-        // Meme image placeholder - uncomment and modify as needed
-        // <img
-        //   src="/meme-image.jpg"
-        //   alt="Meme"
-        //   className="w-full h-full object-cover"
-        // />
-        null
-      )}
-      <div className="absolute left-0 right-0 p-4 ">
-        <h2 className="text-white text-4xl text-center font-bold">
-          {/* Who would want to hook up with a face like yours? 🫠🫠😂😂 */}
-          You really think anyone’s gonna hook up with that face? 😂🫠
+//   return (
+//     <div className="relative min-h-[50vh] flex items-center justify-center bg-black">
+//       {!showMeme ? (
+//         <video
+//           ref={videoRef}
+//           autoPlay
+//           playsInline
+//           className="w-150 h-full object-cover"
+//         />
+//       ) : (
+//         // Meme image placeholder - uncomment and modify as needed
+//         // <img
+//         //   src="/meme-image.jpg"
+//         //   alt="Meme"
+//         //   className="w-full h-full object-cover"
+//         // />
+//         null
+//       )}
+//       <div className="absolute left-0 right-0 p-4 ">
+//         <h2 className="text-white text-4xl text-center font-bold">
+//           {/* Who would want to hook up with a face like yours? 🫠🫠😂😂 */}
+//           You really think anyone’s gonna hook up with that face? 😂🫠
 
-        </h2>
-      </div>
-    </div>
-  );
-}
+//         </h2>
+//       </div>
+//     </div>
+//   );
+// }
 
 //---------------------------------------------------------
 // // CameraSection.tsx
@@ -261,3 +262,131 @@ export default function CameraSection() {
 //     </div>
 //   );
 // }
+
+
+// src/components/camera/camera-section.tsx
+//updated 09/01
+// import { useEffect, useRef, useState } from 'react';
+// import CameraPermissionSkeleton from './camera-permission-skelteon';
+
+// export default function CameraSection() {
+//   const videoRef = useRef<HTMLVideoElement>(null);
+//   // eslint-disable-next-line @typescript-eslint/no-unused-vars
+//   // const [showMeme, setShowMeme] = useState(false); // Toggle for meme functionality
+//   const [hasPermission, setHasPermission] = useState(false);
+//   const [stream, setStream] = useState<MediaStream | null>(null);
+
+//   useEffect(() => {
+//     return () => {
+//       // Cleanup: stop all tracks when component unmounts
+//       if (stream) {
+//         stream.getTracks().forEach(track => track.stop());
+//       }
+//     };
+//   }, [stream]);
+
+//   const startCamera = async () => {
+//     try {
+//       const mediaStream = await navigator.mediaDevices.getUserMedia({ video: true });
+//       if (videoRef.current) {
+//         videoRef.current.srcObject = mediaStream;
+//       }
+//       setStream(mediaStream);
+//     } catch (err) {
+//       console.error('Error accessing camera:', err);
+//     }
+//   };
+
+//   const handlePermissionGranted = () => {
+//     setHasPermission(true);
+//     startCamera();
+//   };
+
+//   if (!hasPermission) {
+//     return <CameraPermissionSkeleton onPermissionGranted={handlePermissionGranted} />;
+//   }
+
+//   return (
+//     <div className="relative min-h-[50vh] flex items-center justify-center bg-black">
+//       {!showMeme ? (
+//         <video
+//           ref={videoRef}
+//           autoPlay
+//           playsInline
+//           className="w-50 h-50 object-cover"
+//         />
+//       ) : (
+//         // Meme image placeholder - uncomment and modify as needed
+//         // <img
+//         //   src="/meme-image.jpg"
+//         //   alt="Meme"
+//         //   className="w-full h-full object-cover"
+//         // />
+//         null
+//       )}
+//       <div className="absolute left-0 right-0 p-4">
+//         <h2 className="text-white text-4xl text-center font-bold">
+//           You really think anyone's gonna hook up with that face? 😂🫠
+//         </h2>
+//       </div>
+//     </div>
+//   );
+// }
+
+import { useEffect, useRef, useState } from 'react';
+import CameraPermissionSkeleton from './camera-permission-skelteon';
+
+export default function CameraSection() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [hasPermission, setHasPermission] = useState(false);
+  const [stream, setStream] = useState<MediaStream | null>(null);
+
+  // Remove unused state
+  // const [showMeme, setShowMeme] = useState(false);
+
+  useEffect(() => {
+    return () => {
+      // Cleanup: stop all tracks when component unmounts
+      if (stream) {
+        stream.getTracks().forEach(track => track.stop());
+      }
+    };
+  }, [stream]);
+
+  const startCamera = async () => {
+    try {
+      const mediaStream = await navigator.mediaDevices.getUserMedia({ video: true });
+      if (videoRef.current) {
+        videoRef.current.srcObject = mediaStream;
+      }
+      setStream(mediaStream);
+    } catch (err) {
+      console.error('Error accessing camera:', err);
+    }
+  };
+
+  const handlePermissionGranted = () => {
+    setHasPermission(true);
+    startCamera();
+  };
+
+  if (!hasPermission) {
+    return <CameraPermissionSkeleton onPermissionGranted={handlePermissionGranted} />;
+  }
+
+  return (
+    <div className="relative min-h-[50vh] flex items-center justify-center bg-black">
+      <video
+        ref={videoRef}
+        autoPlay
+        playsInline
+        className="w-50 h-50 object-cover"
+      />
+      <div className="absolute left-0 right-0 p-4">
+        <h2 className="text-white text-4xl text-center font-bold">
+          You really think anyone&apos;s gonna hook up with that face? 😂🫠
+        </h2>
+      </div>
+    </div>
+  );
+}

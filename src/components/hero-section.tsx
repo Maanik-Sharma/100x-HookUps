@@ -474,6 +474,77 @@
 // }
 
 
+// import React, { useState } from "react";
+// import { BackgroundLines } from "@/components/ui/background-lines";
+// import { Button } from './ui/button';
+// import { Checkbox } from './ui/checkbox';
+
+// export default function HeroSection({ onSearch }: { onSearch: () => void }) {
+//   const [preference, setPreference] = useState('');
+//   const options = ['Male', 'Female', 'Non-binary', 'Everyone'];
+
+//   return (
+//     <div className="relative w-full min-h-screen">
+//       {/* [1] Background Image height adjustment */}
+//       <img 
+//         src="/assests/hero-section-bg.webp" 
+//         alt="Background" 
+//         className="absolute inset-0 w-full min-h-screen md:h-full object-cover object-center"
+//       />
+// {/* //min-h-[50vh] */}
+//       <BackgroundLines>
+//         {/* [2] Section height adjustment */}
+//         <section className="min-h-screen md:min-h-screen flex items-center justify-center relative">
+//         {/* <section className="min-h-screen md:min-h-screen flex items-center justify-center relative text-8xl md:text-2xl lg:text-xl"> */}
+
+//           <div className="absolute inset-0 bg-gradient-to-br from-neutral-950/70 to-neutral-900/70" />
+
+//           <div className="relative z-10 text-center w-full max-w-6xl mx-auto pt-20 md:pt-0">
+//             <h1 className="text-6xl md:text-6xl lg:text-8xl font-bold mb-4 md:mb-8 bg-clip-text text-transparent bg-gradient-to-r from-neutral-50 to-neutral-200">
+//               100xHookUps
+//             </h1>
+
+//             <p className="text-xl md:text-xl mb-6 md:mb-12 max-w-2xl mx-auto text-neutral-50 px-4">
+//               Find your perfect match in the world of tech and innovation.
+//             </p>
+
+//             <p className="text-lg mb-4 max-w-2xl mx-auto text-neutral-50">
+//               Looking for?
+//             </p>
+
+//             <div className="space-y-8 md:space-y- flex flex-col items-center">
+//               <div className="grid grid-cols-1 md:flex md:flex-row gap-4 md:gap-4 justify-center px-4 md:px-0 w-full max-w-xs md:max-w-none">
+//                 {options.map((option) => (
+//                   <label 
+//                     key={option} 
+//                     className="flex items-center justify-center space-x-2 text-neutral-50 bg-neutral-900/50 p-2 rounded-lg backdrop-blur-sm"
+//                   >
+//                     <Checkbox 
+//                       checked={preference === option}
+//                       onCheckedChange={() => setPreference(option)}
+//                       className="border-neutral-50 data-[state=checked]:bg-red-500"
+//                     />
+//                     <span className="text-sm md:text-base">{option}</span>
+//                   </label>
+//                 ))}
+//               </div>
+
+//               {/* [3] Button margin bottom adjustment */}
+//               <Button
+//                 onClick={onSearch}
+//                 className="bg-gradient-to-r from-neutral-200 to-neutral-50 text-neutral-950 px-6 md:px-8 py-3 md:py-4 rounded-full text-base md:text-lg hover:from-neutral-300 hover:to-neutral-100 w-[200px] mx-auto mb-8 md:mb-0"
+//                 disabled={!preference}
+//               >
+//                 Search Partners
+//               </Button>
+//             </div>
+//           </div>
+//         </section>
+//       </BackgroundLines>
+//     </div>
+//   );
+// }
+
 import React, { useState } from "react";
 import { BackgroundLines } from "@/components/ui/background-lines";
 import { Button } from './ui/button';
@@ -484,53 +555,54 @@ export default function HeroSection({ onSearch }: { onSearch: () => void }) {
   const options = ['Male', 'Female', 'Non-binary', 'Everyone'];
 
   return (
-    <div className="relative w-full">
-      {/* [1] Background Image height adjustment */}
+    <div className="relative w-full min-h-screen">
       <img 
         src="/assests/hero-section-bg.webp" 
         alt="Background" 
-        className="absolute inset-0 w-full h-[50vh] md:h-full object-cover object-center"
+        className="absolute inset-0 w-full min-h-screen md:h-full object-cover object-center"
       />
 
       <BackgroundLines>
-        {/* [2] Section height adjustment */}
-        <section className="min-h-[50vh] md:min-h-screen flex items-start md:items-center justify-center relative">
+        <section className="min-h-screen md:min-h-screen flex items-center justify-center relative">
           <div className="absolute inset-0 bg-gradient-to-br from-neutral-950/70 to-neutral-900/70" />
 
           <div className="relative z-10 text-center w-full max-w-6xl mx-auto pt-20 md:pt-0">
-            <h1 className="text-4xl md:text-6xl lg:text-8xl font-bold mb-4 md:mb-8 bg-clip-text text-transparent bg-gradient-to-r from-neutral-50 to-neutral-200">
+            <h1 className="text-6xl md:text-6xl lg:text-8xl font-bold mb-6 md:mb-8 bg-clip-text text-transparent bg-gradient-to-r from-neutral-50 to-neutral-200">
               100xHookUps
             </h1>
 
-            <p className="text-lg md:text-xl mb-6 md:mb-12 max-w-2xl mx-auto text-neutral-50 px-4">
+            <p className="text-xl md:text-xl mb-6 md:mb-12 max-w-2xl mx-auto text-neutral-50 px-4">
               Find your perfect match in the world of tech and innovation.
             </p>
 
-            <p className="text-sm mb-4 max-w-2xl mx-auto text-neutral-50">
+            <p className="text-lg mb-6 max-w-2xl mx-auto text-neutral-50">
               Looking for?
             </p>
 
-            <div className="space-y-4 md:space-y-6 flex flex-col items-center">
-              <div className="grid grid-cols-2 md:flex md:flex-row gap-3 md:gap-4 justify-center px-4 md:px-0 w-full max-w-xs md:max-w-none">
+            <div className="flex flex-col items-center gap-8">
+              <div className="grid grid-cols-1 md:flex md:flex-row gap-4 justify-center px-4 md:px-0 w-full max-w-xs md:max-w-none">
                 {options.map((option) => (
-                  <label 
-                    key={option} 
-                    className="flex items-center justify-center space-x-2 text-neutral-50 bg-neutral-900/50 p-2 rounded-lg backdrop-blur-sm"
-                  >
-                    <Checkbox 
-                      checked={preference === option}
-                      onCheckedChange={() => setPreference(option)}
-                      className="border-neutral-50 data-[state=checked]:bg-red-500"
-                    />
-                    <span className="text-sm md:text-base">{option}</span>
-                  </label>
-                ))}
+                <label 
+                  key={option} 
+                  className="flex items-center justify-start text-neutral-50 bg-neutral-900/50 p-3 rounded-lg backdrop-blur-sm w-full md:w-auto min-w-[140px]"
+                >
+                  <div className="flex items-center gap-0 w-full pl-2">
+                    <div className="w-6 flex-shrink-0">
+                      <Checkbox 
+                        checked={preference === option}
+                        onCheckedChange={() => setPreference(option)}
+                        className="border-neutral-50 data-[state=checked]:bg-red-500"
+                      />
+                    </div>
+                    <span className="text-lg md:text-base flex-1">{option}</span>
+                  </div>
+                </label>
+              ))}
               </div>
 
-              {/* [3] Button margin bottom adjustment */}
               <Button
                 onClick={onSearch}
-                className="bg-gradient-to-r from-neutral-200 to-neutral-50 text-neutral-950 px-6 md:px-8 py-3 md:py-4 rounded-full text-base md:text-lg hover:from-neutral-300 hover:to-neutral-100 w-[200px] mx-auto mb-8 md:mb-0"
+                className="bg-gradient-to-r from-neutral-200 to-neutral-50 text-neutral-950 px-8 md:px-8 py-3 md:py-4 rounded-full text-base md:text-lg hover:from-neutral-300 hover:to-neutral-100 w-[200px] mx-auto mb-8 md:mb-0"
                 disabled={!preference}
               >
                 Search Partners
