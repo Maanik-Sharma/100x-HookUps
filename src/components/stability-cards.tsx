@@ -78,7 +78,7 @@ export default function StabilityCards() {
     {
       title: "Being academically stable",
       image: "assests/academically-stable.webp",
-      link: "https://www.youtube.com/@GateSmashers"
+      link: "https://100xdevs.com/"
     },  
     {
       title: "Being physically stable",

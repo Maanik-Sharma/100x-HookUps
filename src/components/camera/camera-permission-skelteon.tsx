@@ -346,7 +346,7 @@ export default function CameraPermissionPage({ onPermissionGranted }: CameraPerm
 
   useEffect(() => {
     requestPermission();
-  }, []);
+  }, [[requestPermission]]);
 
   if (permissionState === 'checking') {
     return (
